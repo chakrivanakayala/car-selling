@@ -1,0 +1,48 @@
+document.addEventListener("DOMContentLoaded", () => {
+    // Handle Reset Password Button Click
+    const resetButton = document.querySelector(".forgot button");
+    const emailInput = document.querySelector(".forgot .inputBx input");
+
+    resetButton.addEventListener("click", (event) => {
+        event.preventDefault();
+
+        // Clear existing error messages
+        const existingError = document.querySelector(".forgot .error");
+        if (existingError) existingError.remove();
+
+        // Validate Email
+        const emailValue = emailInput.value.trim();
+        if (!/^[\w.%+-]+@[\w.-]+\.[a-zA-Z]{2,}$/.test(emailValue)) {
+            addError(emailInput, "Please enter a valid email address.");
+        } else {
+            alert("Reset password instructions have been sent to your email.");
+            emailInput.value = ""; // Clear the input field
+        }
+    });
+
+    // Handle Navigation Buttons
+    const loginLink = document.querySelector(".forgot .btn .in");
+    const signupLink = document.querySelector(".forgot .btn .out");
+
+    loginLink.addEventListener("click", (event) => {
+        event.preventDefault();
+        alert("Redirecting to Log In page.");
+        window.location.href = loginLink.getAttribute("href");
+    });
+
+    signupLink.addEventListener("click", (event) => {
+        event.preventDefault();
+        alert("Redirecting to Sign Up page.");
+        window.location.href = signupLink.getAttribute("href");
+    });
+
+    // Function to add error messages
+    function addError(input, message) {
+        const error = document.createElement("span");
+        error.className = "error";
+        error.style.color = "red";
+        error.style.fontSize = "0.9em";
+        error.textContent = message;
+        input.parentNode.appendChild(error);
+    }
+});
