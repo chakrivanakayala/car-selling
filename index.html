@@ -986,7 +986,7 @@
                 <h2>Welcome!</h2>
                 <p>Please sign up or sign in to continue.</p>
                 <button id="signupBtn">Sign Up</button>
-                <button id="signinBtn"><a href="/index.html">Sign In</a></button>
+                <button id="signinBtn">Sign In</button>
             </div>
         </div>
     </div>
@@ -1005,14 +1005,15 @@
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+            console.log("isLoggedIn" + isLoggedIn);
     
             const modal = document.getElementById("authModal");
             const closeBtn = document.getElementsByClassName("close")[0];
             const signupBtn = document.getElementById("signupBtn");
             const signinBtn = document.getElementById("signinBtn");
     
-            if (!isLoggedIn) {
-                modal.style.display = "block";
+            if (isLoggedIn) {
+                modal.style.display = "none";
             }
     
             closeBtn.onclick = function () {
@@ -1020,13 +1021,11 @@
             }
     
             signupBtn.onclick = function () {
-                localStorage.setItem('isLoggedIn', 'true');
                 window.location.href = '/signup/logout.html';
                 modal.style.display = "none";
             }
     
             signinBtn.onclick = function () {
-                localStorage.setItem('isLoggedIn', 'true');
                 window.location.href = '/signup/login.html';
                 modal.style.display = "none";
             }
