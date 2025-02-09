@@ -1181,7 +1181,6 @@ section h1 span {
 
 .play .play-btn::before,
 .play .play-btn::after {
-    content: '';
     position: absolute;
     border: 6px solid rgba(255, 255, 255, 0.4);
     border-radius: 50%;
@@ -4557,6 +4556,10 @@ section h1.motob::after {
     transition: 0.5s;
 }
 
+.blog-row .blog-col:hover .image img {
+    transform: scale(1.1);
+}
+
 .blog-row .blog-col .date {
     display: flex;
     justify-content: left;
@@ -4580,7 +4583,47 @@ section h1.motob::after {
     padding: 20px 0 30px;
     font-size: 20px;
     letter-spacing: 1px;
+    color: #646161;
+    font-family: 'poppins', sans-serif;
+    font-weight: 550;
 }
+
+.blog-row .blog-col a {
+    background: var(--main-color);
+    color: #ffff;
+    padding: 12px 30px 12px 20px;
+    font-size: 16px;
+    border-radius: 8px;
+    position: relative;
+    transition: 0.5s;
+}
+
+.blog-row .blog-col a i {
+    position: absolute;
+    top: 12px;
+    font-size: 20px;
+}
+
+.blog-row .blog-col a:hover {
+    background: var(--text-color);
+}
+
+@media(max-width:1160px) {
+    .blog .blog-row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(max-width:768px) {
+    .blog .blog-row {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .blog-row .blog-col .image {
+        height: auto;
+    }
+}
+
 
 /* ...existing code... */
 
