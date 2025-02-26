@@ -5597,3 +5597,386 @@ section h1.motob::after {
         width: 300px;
     }
 }
+
+/* ==== Team Section Start ==== */
+
+.team .team-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 50px;
+    margin-top: 30px;
+}
+
+.team-row .col-t {
+    width: 100%;
+    height: auto;
+    box-shadow: 0 0 10px #d8d3d3;
+    border-radius: 10px;
+    padding: 12px 10px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.team-row .col-t .user-img {
+    position: relative;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.team-row .col-t .user-img img {
+    width: 100%;
+    height: 27rem;
+    border-radius: 10px;
+}
+
+.team-row .col-t .user-img .icon {
+    position: absolute;
+    top: 10%;
+    right: 10px;
+    display: none;
+    transition: 0.5s;
+}
+
+.team-row .col-t:hover .user-img .icon {
+    right: 10px;
+    display: block;
+}
+
+.team-row .col-t .user-img .icon i {
+    position: relative;
+    display: block;
+    margin-bottom: 20px;
+    font-size: 20px;
+    background: var(--main-color);
+    color: #ffff;
+    border-radius: 50%;
+    padding: 10px;
+    transition: 0.5s;
+}
+
+.team-row .col-t .user-img .icon i:hover {
+    background: var(--text-color);
+}
+
+.team-row .col-t h3 {
+    padding: 10px 0;
+    color: var(--text-color);
+    font-size: 22px;
+    letter-spacing: 0.5px;
+}
+
+.team-row .col-t p {
+    font-size: 16px;
+    color: var(--main-color);
+    font-weight: 600;
+}
+
+.team-row .col-t:hover {
+    transform: translateY(-10px);
+}
+
+@media(max-width:1200px) {
+    .team .team-row {
+        gap: 10px;
+    }
+
+    .team-row .col-t .user-img img {
+        height: auto;
+    }
+
+    .team-row .col-t .user-img .icon i {
+        margin-bottom: 10px;
+        font-size: 16px;
+    }
+}
+
+@media(max-width:991px) {
+    .team .team-row {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media(max-width:768px) {
+    .team .team-row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .team-row .col-t .user-img .icon i {
+        margin-bottom: 10px;
+        font-size: 16px;
+    }
+}
+
+@media(max-width:550px) {
+    .team .team-row {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .team-row .col-t .user-img .icon i {
+        margin-bottom: 20px;
+        font-size: 18px;
+    }
+}
+
+/* ==== Calclator Section Start ==== */
+
+.calculator {
+    padding: 8.5% 10.5%;
+}
+
+.calculator .col-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    box-shadow: 0 0 10px #cac5c5;
+    background: #ffff;
+    border-radius: 15px;
+    padding: 6rem 2rem;
+}
+
+.col-row .cal-col-1 {
+    flex: 40rem;
+    padding: 10px 30px;
+}
+
+.col-row .cal-col-1 h2 {
+    font-size: 24px;
+    color: #646161;
+    padding-bottom: 20px;
+}
+
+.col-row .cal-col-1 .box {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.col-row .cal-col-1 .inputBx {
+    box-shadow: 0 0 4px #aea6a6;
+    width: 100%;
+    height: 45px;
+    margin-bottom: 38px;
+}
+
+.col-row .cal-col-1 .inputBx input {
+    width: 100%;
+    height: 100%;
+    padding: 10px 15px;
+    font-size: 17px;
+}
+
+.col-row .cal-col-1 .inputBx input:focus {
+    border: 1px solid var(--main-color);
+}
+
+.col-row .cal-col-1 a {
+    position: relative;
+    background: var(--main-color);
+    color: #ffff;
+    padding: 12px 26px;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: 0.5s;
+}
+
+.col-row .cal-col-1 a:hover {
+    background: var(--text-color);
+}
+
+.col-row .cal-col-1 a i {
+    position: absolute;
+    top: 16px;
+}
+
+.col-row .cal-col-2 {
+    flex: 10rem;
+}
+
+.col-row .cal-col-2 img {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+}
+
+@media(max-width:991px) {
+    .col-row .cal-col-1 .box {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 0;
+    }
+
+    .col-row .cal-col-1 {
+        flex: 100%;
+    }
+
+    .col-row .cal-col-2 {
+        flex: 100%;
+    }
+}
+
+@media(max-width:768px) {
+    .calculator .col-row {
+        flex: wrap;
+    }
+
+    .col-row .cal-col-2 img {
+        margin-top: 40px;
+        padding: 22px;
+    }
+}
+
+@media(max-width:500px) {
+    .col-row .cal-col-1 h2 {
+        font-size: 18px;
+    }
+}
+
+/* ==== Contact Section Start ==== */
+
+.contact .contact-row {
+    padding: 4.5rem 12.5%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.contact-row .contact-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: #fddddf;
+    padding: 30px;
+    border-radius: 8px;
+    transition: 0.5s ease;
+}
+
+.contact-row .contact-col:hover {
+    transform: translateY(-10px);
+}
+
+.contact-row .contact-col img {
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+}
+
+.contact-row .contact-col h6 {
+    font-size: 20px;
+    color: #646161;
+    padding: 6px 0;
+    font-family: 'poppins', sans-serif;
+}
+
+.contact-row .contact-col p {
+    font-size: 14px;
+    color: #646161;
+}
+
+.contact .touch-row {
+    padding: 4.5rem 12.5%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.touch-row .touch-col img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px 50% 50% 50%;
+}
+
+.touch-row .touch-col h5 {
+    font-size: 27px;
+    font-family: 'poppins', sans-serif;
+    color: #646161;
+}
+
+.touch-row .touch-col p {
+    font-size: 14px;
+    font-family: 'poppins', sans-serif;
+    color: #646161;
+    padding-bottom: 30px;
+    padding-top: 10px;
+}
+
+.touch-row .touch-col .box {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.touch-row .touch-col .box .inputBx,
+.touch-row .touch-col .inputBx {
+    width: 100%;
+    height: 45px;
+    border: 1px solid #646161;
+    margin-bottom: 30px;
+}
+
+.touch-row .touch-col .box .inputBx input,
+.touch-row .touch-col .inputBx input {
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+    font-size: 16px;
+    border-radius: 8px;
+}
+
+.touch-row .touch-col .box .inputBx input:focus,
+.touch-row .touch-col .inputBx input:focus,
+.touch-row .touch-col textarea:focus {
+    border: 1px solid var(--main-color);
+}
+
+.touch-row .touch-col textarea {
+    width: 100%;
+    padding: 5px;
+    font-size: 16px;
+    border: 1px solid #646161;
+    border-radius: 8px;
+}
+
+.touch-row .touch-col button {
+    margin-top: 40px;
+    padding: 15px 30px;
+    background: var(--main-color);
+    color: #ffff;
+    font-size: 17px;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.touch-row .touch-col button:hover {
+    background: var(--text-color);
+}
+
+@media(max-width:1200px) {
+    .contact .contact-row {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media(max-width:991px) {
+    .contact .contact-row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .contact .touch-row {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media(max-width:600px) {
+    .contact .contact-row {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .contact .touch-row .box {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .touch-row .touch-col .box {
+        gap: 0;
+    }
+}

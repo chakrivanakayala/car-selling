@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign In Page- AUTOSHOP</title>
+    <title>Calculator Page- AUTOSHOP</title>
     <!-- swiper css link -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <!-- customer css file -->
@@ -48,16 +48,17 @@
                 <ul class="navLink">
                     <li><a href="/index.html">Home</a></li>
                     <li><a href="/about.html">About</a></li>
-                    <li><a href="#">Inventory <i class='bx bx-chevron-down'></i></a>
-                        <ul class="drop-down">
-                            <li><a href="/inventory_grid.html">Inventory Grid</a></li>
-                            <li><a href="/inventory-list.html">Inventory List</a></li>
-                            <li><a href="/inventory_single.html">Inventory Single</a></li>
-                        </ul>
-                    </li>
                     <li><a href="#">Pages <i class='bx bx-chevron-down'></i></a>
                         <ul class="drop-down">
                             <li><a href="/about.html">About</a></li>
+                            <li><a href="#">Car Listing <i class='bx bx-chevron-down chev'></i></a>
+                                <ul class="drop-down-two">
+                                    <li><a href="#">Listing Grid</a></li>
+                                    <li><a href="#">Listing List</a></li>
+                                    <li><a href="#">Listing Single</a></li>
+                                    <li><a href="#">Compare</a></li>
+                                </ul>
+                            </li>
                             <li><a href="#">Account</a></li>
                             <li><a href="#">My Account <i class='bx bx-chevron-down chev'></i></a>
                                 <ul class="drop-down-three">
@@ -72,7 +73,7 @@
                             </li>
                             <li><a href="#">Authentication <i class='bx bx-chevron-down chev'></i></a>
                                 <ul class="drop-down-four">
-                                    <li><a href="/signup/login.html" class="active">Login</a></li>
+                                    <li><a href="/signup/login.html">Login</a></li>
                                     <li><a href="/signup/logout.html">Register</a></li>
                                     <li><a href="/signup/reset.html">Forgot Password</a></li>
                                 </ul>
@@ -92,7 +93,7 @@
                             <li><a href="#">Extra Pages</a></li>
                             <li><a href="/team.html">Our Team</a></li>
                             <li><a href="/price.html">Pricing Plan</a></li>
-                            <li><a href="/calculator.html">Calculator</a></li>
+                            <li><a href="/calculator.html" class="active">Calculator</a></li>
                             <li><a href="#">FAQ</a></li>
                             <li><a href="#">Testimonials</a></li>
                         </ul>
@@ -124,44 +125,44 @@
         </nav>
     </header>
 
-    <!-- ==== Login form section start ====  -->
+    <!--  ==== Team page section start ====  -->
 
-    <div class="login">
-        <div class="title" id="loginForm">
-            <h3>Customer Login Form</h3>
+    <div class="inventory">
+        <h2>Calculator</h2>
+        <div class="link">
+            <a href="/index.html">Home</a>
+            <span>>>></span>
+            <p>Calculator</p>
         </div>
-        <form action="">
-            <div class="inputs">
+    </div>
+
+    <!--  ==== Team section start ====  -->
+
+    <div class="calculator">
+        <div class="col-row">
+            <div class="cal-col-1">
+                <h2>Financing Calculator</h2>
                 <div class="inputBx">
-                    <label for="email">User Name* or Email *</label>
-                    <input type="email" id="email" name="email" placeholder="Enter Your Email" required>
+                    <input type="text" placeholder="$ price">
+                </div>
+                <div class="box">
+                    <div class="inputBx">
+                        <input type="text" placeholder="% Rate">
+                    </div>
+                    <div class="inputBx">
+                        <input type="text" placeholder="Loan Period">
+                    </div>
                 </div>
                 <div class="inputBx">
-                    <label for="phone">phone number *</label>
-                    <input type="tel" id="phone" name="phone" placeholder="123-45-678" required>
+                    <input type="text" placeholder="$ Down Payment">
                 </div>
-                <div class="inputBx">
-                    <label for="password">Password *</label>
-                    <input type="password" id="password" name="password" placeholder="Enter Your Password" required>
-                </div>
-            </div>
-            <div class="forgot">
-                <a href="/signup/reset.html">Forgot Password</a>
-            </div>
-            <div class="submit">
-                <button type="submit">Sign in</button>
+                <a href="#">Calculate Now <i class="bx bx-right-arrow-alt"></i></a>
             </div>
 
-
-            <div class="social_log">
-                <p>Continue with social media</p>
-                <div class="social">
-                    <i class="bx bxl-facebook fb"></i>
-                    <i class="bx bxl-google"></i>
-                    <i class="bx bxl-twitter tw"></i>
-                </div>
+            <div class="cal-col-2">
+                <img src="/img/cal.jpg" alt="">
             </div>
-        </form>
+        </div>
     </div>
 
     <!--  ==== footer section start ====  -->
@@ -227,76 +228,6 @@
     <script src="js/main.js">
 
     </script>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const form = document.querySelector("form"); // Select the form
-
-            form.addEventListener("submit", function (event) {
-                event.preventDefault(); // Prevent the default form submission
-
-                // Clear previous error messages
-                document.querySelectorAll(".error").forEach(error => error.remove());
-
-                let isValid = true;
-
-                // Validate email
-                const email = document.getElementById("email");
-                if (!/^[\w.-]+@[\w.-]+\.\w+$/.test(email.value)) {
-                    isValid = false;
-                    addError(email, "Please enter a valid email address.");
-                }
-
-                // Validate phone number
-                const phone = document.getElementById("phone");
-                if (!/^\d{10}$/.test(phone.value)) {
-                    isValid = false;
-                    addError(phone, "Please enter a valid phone number (e.g., 123-45-678).");
-                }
-
-                // Validate password
-                const password = document.getElementById("password");
-                if (password.value.length < 8) {
-                    isValid = false;
-                    addError(password, "Password must be at least 8 characters long.");
-                }
-
-                if (isValid) {
-                    // If all validations pass, redirect to index.html
-                    console.log("Form submitted successfully!");
-                    window.location.href = "/index.html";
-                }
-            });
-
-            function addError(element, message) {
-                // Create an error message element
-                const error = document.createElement("div");
-                error.className = "error";
-                error.style.color = "red";
-                error.textContent = message;
-                // Insert the error message after the input field
-                element.parentNode.insertBefore(error, element.nextSibling);
-            }
-        });
-
-    </script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const form = document.getElementById('login');
-            form.addEventListener('submit', function (event) {
-                //event.preventDefault(); // Prevent the default form submission
-
-                // Perform form validation or any other logic here
-
-                // Set login flag in local storage
-                localStorage.setItem('isLoggedIn', 'true');
-
-                // Redirect to the index page after successful signin
-                window.location.href = '/index.html';
-            });
-        });
-    </script>
-
 </body>
 
 </html>
